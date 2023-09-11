@@ -12,6 +12,6 @@ user1 = User(
     'a@mail.com',    
 )
 
-repository.append_data(
-    repository.dto.UserToEntity(user1)
-)
+# repository.append_data(
+#     repository.dto.UserToEntity(user1)
+# )

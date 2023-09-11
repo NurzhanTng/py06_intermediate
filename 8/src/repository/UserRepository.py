@@ -8,7 +8,7 @@ class UserRepository:
     def __init__(self) -> None:
         self.dto = UserDto()
     
-    def append_data(self, user: dict):
+    def __append_data(self, user: dict):
         try:
             data = []            
             with open('src/db/user.json', 'r', encoding='utf8') as f:
@@ -22,7 +22,7 @@ class UserRepository:
         except Exception as e:
             print(e)
     
-    def get_data(self):
+    def __get_data(self):
         try:
             data = []            
             with open('src/db/user.json', 'r', encoding='utf8') as f:
