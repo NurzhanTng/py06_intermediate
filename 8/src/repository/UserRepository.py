@@ -33,9 +33,15 @@ class UserRepository:
         except Exception as e:
             print(e)
               
-    def create_new_user(self, user: User): NotImplemented
-    
-    def get_user_by_id(self, id: int): NotImplemented
+    def create_new_user(self, user: User): 
+        self.__append_data(self.dto.UserToEntity(user))
+
+    def get_user_by_id(self, id: int): 
+        users:list[dict]=self.__get_data()
+        for user in users:
+            user=self.dto.EntityToUser(user)
+            if user.id==id:
+                return user
     
     def update_phone(self, id: int, phone: str): NotImplemented
     
